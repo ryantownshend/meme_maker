@@ -10,3 +10,10 @@ poetry run memer --image tests/spock.png --top top --bottom bottom --fontsize 80
 ```
 
 If not given a `--save` argument, use whatever the os viewer is for images.
+
+
+## TODO
+
+- mulitline text
+- transparancy / color on border
+- art?
