@@ -18,8 +18,8 @@ class MemeMaker:
         self.default_fontsize = fontsize
         self.current_fontsize = self.default_fontsize
         self.border = border
-        self.white = (255, 255, 255)
-        self.black = (0, 0, 0)
+        self.white = (255, 255, 255, 0)
+        self.black = (0, 0, 0, 128)
 
         self.image = Image.open(self.image_path)
         self.draw = ImageDraw.Draw(self.image)
@@ -80,7 +80,9 @@ class MemeMaker:
         return offset_y
 
     def draw_border_text(self, x, y, text):
-        """Draw black border around text, origin is top left."""
+        """Draw black border around text, origin is top left.
+        https://stackoverflow.com/questions/47123649/pil-draw-transparent-text-on-top-of-an-image
+        """
         width = self.border
         self.draw.text(
             (x - width, y), text, self.black, font=self.font)
@@ -117,10 +119,10 @@ class MemeMaker:
 
 
 @click.command()
-@click.option("--image")
+@click.option("--image", type=click.Path(exists=True))
 @click.option("--top")
 @click.option("--bottom")
-@click.option("--save")
+@click.option("--save", type=click.Path())
 @click.option("--fontsize", default=80)
 @click.option("--border", default=3)
 def main(image, top, bottom, save, fontsize, border):
