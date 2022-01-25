@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "memetext"
 version = "0.1.1"
-description = ""
+description = "Write top and bottom text on an image, block meme style."
 authors = ["Ryan Townshend <citizen.townshend@gmail.com>"]
 
 [tool.poetry.dependencies]
