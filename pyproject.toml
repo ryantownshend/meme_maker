@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "meme_maker"
+name = "memetext"
 version = "0.1.0"
 description = ""
 authors = ["Ryan Townshend <citizen.townshend@gmail.com>"]
@@ -16,4 +16,4 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-memer = "meme_maker.meme_maker:main"
+memer = "memetext.memetext:main"
